@@ -1,16 +1,16 @@
 import { useState } from 'react'
-export async function getServerSideProps(context) {
+// export async function getServerSideProps(context) {
 
-    let res = await fetch('http://localhost:3000/api/hello')
-    let posts = await res.json();
+//     let res = await fetch('http://localhost:3000/api/hello')
+//     let posts = await res.json();
 
-    return {
-        props: { posts }, // will be passed to the page component as props
-    }
-}
+//     return {
+//         props: { posts }, // will be passed to the page component as props
+//     }
+// }
 
 export default function showapi({ posts }) {
-    const [a, seta] = useState(posts)
+    // const [a, seta] = useState(posts)
     const [b, setb] = useState()
     const [value, setvalue] = useState()
 
@@ -20,7 +20,7 @@ export default function showapi({ posts }) {
 
     async function callingapi() {
         
-        let res = await fetch('http://localhost:3000/api/demodata?value=' + value)
+        let res = await fetch('/api/demodata?value=' + value)
         res = await res.json();
         setb(res)
     }
@@ -28,11 +28,11 @@ export default function showapi({ posts }) {
     // console.log(value)
     return (
         <>
-            <div class="card">
+            {/* <div class="card">
                 <div class="card-body text-center">
                     <p> this is data from an getServerSideProps : <br></br>{a.name}</p>
                 </div>
-            </div>
+            </div> */}
 
 
            
